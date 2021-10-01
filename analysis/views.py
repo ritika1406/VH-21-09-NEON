@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'stats.html')
+    
+def ambulance(request):
+    return render(request, 'ambulance.html')
