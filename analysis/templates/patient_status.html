@@ -1,0 +1,127 @@
+{% extends "analysis.html" %}
+{% load static %}
+{% block title %}
+CovidDashboard
+{% endblock %}
+{% block body %}
+<style>
+.card-header{
+    background-color: #00f3ff;
+    border-radius: .7rem;
+    height: 3rem;
+}
+.card-body{
+    background-color: #6cffe294;
+}
+.header1{
+    background-color: #00d237;
+}
+.body1{
+    background-color: #6cff8c94;;
+}
+.header2{
+    background-color: #f16161;
+}
+.body2{
+    background-color: #ff8c8c94;
+}
+.cards{
+    padding: 4rem;
+}
+.card{
+    margin-right: 1rem;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 98%;
+  margin: 1.5rem;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th{
+  background-color: #6f6f67;
+  color: white;
+}
+td:nth-child(2){
+  background-color: #73ffff;
+  
+}
+td:nth-child(4){
+  background-color: #36e88e;
+}
+td:nth-child(5){
+  background-color: #e8f16d;
+}
+td:nth-child(6){
+  background-color: #fd82ff;
+}
+td:nth-child(7){
+  background-color:  #ffcfcf;
+}
+.graph{
+  
+  width: 10rem;
+  margin-left: 5rem;
+  margin-top: 1rem;
+
+}
+</style>
+
+
+<body>
+<a type="button" class="btn btn-outline-warning graph" href="{% url 'graph' %}">Cumilative Graph</a>
+
+<table>
+
+  <tr>
+    <th>State</th>
+    <th>New Infected</th>
+    <th>Death</th>
+    <th>Recovered</th>
+  </tr>
+  {% for i in allPosts  %}
+  <tr>
+    <td><a href="#">{{i.state}}</a></td>
+    <td>{{i.admitted}}</td>
+    <td>{{i.death}}</td>
+    <td>{{i.cured}}</td>
+
+  </tr>
+  {% endfor %}
+  
+</table>
+
+
+
+ {% comment %} 
+<div class="cards row" id="search" name="search">
+<div class="card  mb-3" style="max-width: 18rem;">
+  <div class="card-header">New Infected</div>
+  <div class="card-body">
+    <h5 class="card-title mt-2">{{post.hospital_name}}</h5><hr>
+    <p class="card-text">{{post.admitted}}</p><hr>
+  </div>
+</div>
+<div class="card  mb-3" style="max-width: 18rem;">
+  <div class="card-header header1">Death</div>
+  <div class="card-body body1 ">
+    <h5 class="card-title">{{post.hospital_name}}</h5>
+    <p class="card-text">{{post.death}}</p>
+  </div>
+</div>
+<div class="card  mb-3" style="max-width: 18rem;">
+  <div class="card-header header2">Cure</div>
+  <div class="card-body body2">
+    <h5 class="card-title">{{post.hospital_name}}</h5>
+    <p class="card-text">{{post.cured}}</p>
+  </div>
+</div>
+</div> {% endcomment %}
+
+</body>
+{% endblock %}

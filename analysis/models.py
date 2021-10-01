@@ -57,3 +57,11 @@ class Oxygen(models.Model):
     def __str__(self):
         return self.state
 
+class Patient_Status(models.Model):
+    cured = models.IntegerField(default=1)
+    death = models.IntegerField(default=1)
+    admitted = models.IntegerField(default=1)
+    state = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.state
