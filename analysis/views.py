@@ -37,25 +37,25 @@ def search(request):
     return render(request, 'search.html', params)
 
 def search_beds(request):
-    query = request.GET['search']
+    query = request.GET['search_beds']
     allPosts = Beds.objects.filter(district__icontains=query)
     params = {'allPosts': allPosts}
     return render(request, 'search.html', params)
 
 def search_icu(request):
-    query = request.GET['search']
+    query = request.GET['search_icu']
     allPosts = ICU_Beds.objects.filter(district__icontains=query)
     params = {'allPosts': allPosts}
     return render(request, 'search.html', params)
 
 def search_plasma(request):
-    query = request.GET['search']
+    query = request.GET['search_plasma']
     allPosts = Plasma.objects.filter(district__icontains=query)
     params = {'allPosts': allPosts}
     return render(request, 'search.html', params)
 
 def search_oxygen(request):
-    query = request.GET['search']
+    query = request.GET['search_oxygen']
     allPosts = Oxygen.objects.filter(district__icontains=query)
     params = {'allPosts': allPosts}
     return render(request, 'search.html', params)

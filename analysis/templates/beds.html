@@ -56,8 +56,8 @@ body{
   <label class="btn btn-outline-primary filterbtn" for="btnradio3">Search By Pincode </label>
 </div>
 <div class="search">
-   <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Enter your pincode" aria-label="Search">
+   <form class="d-flex" method="GET" action="/searchbed">
+              <input class="form-control me-2" type="search" placeholder="Enter your pincode" aria-label="Search" name="search_beds" id="search_beds">
               <button class="btn btn-outline-dark" type="submit">Search</button>
     </form>
 </div>

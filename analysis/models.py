@@ -7,6 +7,7 @@ class ICU_Beds(models.Model):
     district = models.CharField(max_length=100)
     pin_code = models.IntegerField(default=0)
     hospital = models.CharField(max_length=100)
+    address_link = models.CharField(max_length=700, default="abc")
     
 
     def __str__(self):
@@ -17,6 +18,7 @@ class Beds(models.Model):
     district = models.CharField(max_length=100)
     pin_code = models.IntegerField(default=0)
     hospital = models.CharField(max_length=100)
+    address_link = models.CharField(max_length=700 , default="abc")
     
     def __str__(self):
         return self.state
@@ -26,6 +28,8 @@ class Ambulance(models.Model):
     district = models.CharField(max_length=100)
     pin_code = models.IntegerField(default=0)
     hospital = models.CharField(max_length=100)
+    address_link = models.CharField(max_length=700 , default="abc")
+
     
     def __str__(self):
         return self.state
@@ -35,6 +39,7 @@ class Vaccination(models.Model):
     district = models.CharField(max_length=100)
     pin_code = models.IntegerField(default=0)
     centre = models.CharField(max_length=100)
+    address_link = models.CharField(max_length=700 , default="abc")
     
     def __str__(self):
         return self.state
@@ -44,6 +49,7 @@ class Plasma(models.Model):
     district = models.CharField(max_length=100)
     pin_code = models.IntegerField(default=0)
     hospital = models.CharField(max_length=100)
+    address_link = models.CharField(max_length=700 , default="abc")
     
     def __str__(self):
         return self.state
@@ -53,6 +59,7 @@ class Oxygen(models.Model):
     district = models.CharField(max_length=100)
     pin_code = models.IntegerField(default=0)
     hospital = models.CharField(max_length=100)
+    address_link = models.CharField(max_length=700 , default="abc")
     
     def __str__(self):
         return self.state

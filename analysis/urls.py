@@ -11,4 +11,9 @@ urlpatterns = [
     path('patient_status/',views.patient_status, name='patient_status'),
     path('search/',views.search, name='search'),
     path('graph/',views.graph, name='graph'),
+    path('searchbed/',views.search_beds, name='search_beds'),
+    path('searchicu/',views.search_icu, name='search_icu'),
+    path('searchoxy/',views.search_oxygen, name='search_oxygen'),
+    path('searchplasma/',views.search_plasma, name='search_plasma'),
+    
 ]
