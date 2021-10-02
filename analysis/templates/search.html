@@ -1,7 +1,7 @@
 {% extends 'analysis.html' %}
 {% load static %}
 {% block title %}
-CoWeb - Search for Ambulance
+CoWeb - Search Results
 {% endblock %}
 
 {% block body %}
@@ -45,6 +45,9 @@ CoWeb - Search for Ambulance
     background-color: #808080;
     color: white;
 }
+a{
+  color: white;
+}
 
 </style>
 <body>
@@ -52,8 +55,8 @@ CoWeb - Search for Ambulance
 <div class="card crds text-center">
   
   <div class="card-body crd">
-    <h5 class="card-title">Search for Ambulance</h5>
-    <p class="card-text">Try searching using Pincode or district name.</p>
+    <h5 class="card-title">Search Results</h5>
+    <p class="card-text">Try searching using pincode or district name.</p>
     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
   <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
   <label class="btn btn-outline-primary filterbtn" for="btnradio1">Search By District</label>
@@ -71,10 +74,8 @@ CoWeb - Search for Ambulance
       {% for post in allPosts  %}
     <div class="card crd2">
       <div class="card-header">
-        
-      
-      <button type="button" class="btn btn-secondary mx-2" data-toggle="popover" id="popcart" data-container="body"
-      data-content="And here's some amazing content. It's very engaging. Right?">{{post.hospital}}</button>
+      <a href="{{post.address_link}}">
+        {{post.hospital}}</a>
       </div>
       <div class="card-body">
         <blockquote class="blockquote mb-0">
@@ -91,20 +92,4 @@ CoWeb - Search for Ambulance
   </div>
 </div>
 </body>
-
 {% endblock %}
-{% block js %}
-<script>
-
-$('#popcart').popover();
-{% comment %} document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>'); {% endcomment %}
-  {% comment %} var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
-}) {% endcomment %}
-</script>
-{% endblock %}
-
-
-
-
